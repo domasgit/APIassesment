@@ -44,10 +44,8 @@ def get_order_items (order_id):
     return ids, names, quantities, prices, taxes
 
 def print_results (ids, names, quantities, prices, taxes):
-    i = 0
-    for id in ids:
-        print(f"[ID#{id}] {names[i]} * qty: {quantities[i]} Price ${prices[i]} + tax ${taxes[i]}")
-        i+=1
+    for id, name, quantity, price, tax in zip(ids, names, quantities, prices, taxes):
+        print(f"[ID#{id}] {name} * qty: {quantity} Price ${price} + tax ${tax}")
 
 
 def main():
